@@ -29,6 +29,9 @@ export default class Customer {
         return this._address;
     }
     
+    get fullAddress (): string {
+        return `${this._address.street}, ${this._address.number}.\n${this._address.zip} ${this._address.city}`
+    }
     isActive() : boolean {
         return this._active
     }
@@ -56,7 +59,7 @@ export default class Customer {
         this._active = false;
     }
 
-    Address(address: Address) {
+    set Address(address: Address) {
         this._address = address
     }
 
